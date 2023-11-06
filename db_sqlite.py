@@ -4,10 +4,10 @@ con = sqlite3.connect(r'resources/plant.db')
 
 create_table_plant_request = """
 CREATE TABLE PLANT (
-    COMMON TEXT COMMENT 'Наименование товара',
-    BOTANICAL TEXT COMMENT 'Цена на товар',
-    ZONE TEXT COMMENT 'Описание товара',
-    LIGHT TEXT COMMENT 'Колорийность товара',
+    COMMON TEXT COMMENT 'Группа товара',
+    BOTANICAL TEXT COMMENT 'Название на товар',
+    ZONE TEXT COMMENT 'Расположение  товара',
+    LIGHT TEXT COMMENT 'Свет товара',
     PRICE TEXT COMMENT 'Цена на товар',
     AVAILABILITY TEXT COMMENT 'Артикул товара',
   )
