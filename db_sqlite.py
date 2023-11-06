@@ -1,40 +1,44 @@
 import sqlite3
 
-con = sqlite3.connect(r'resources/food.db')
+con = sqlite3.connect(r'resources/plant.db')
 
-create_table_food_request = """
-CREATE TABLE FOOD (
-    NAME TEXT COMMENT 'Наименование товара',
+create_table_plant_request = """
+CREATE TABLE PLANT (
+    COMMON TEXT COMMENT 'Наименование товара',
+    BOTANICAL TEXT COMMENT 'Цена на товар',
+    ZONE TEXT COMMENT 'Описание товара',
+    LIGHT TEXT COMMENT 'Колорийность товара',
     PRICE TEXT COMMENT 'Цена на товар',
-    DESCRIPTION TEXT COMMENT 'Описание товара',
-    CALORIES TEXT COMMENT 'Колорийность товара'
+    AVAILABILITY TEXT COMMENT 'Артикул товара',
   )
 """
 
-insert_table_food_request = """
-INSERT INTO FOOD (
-    NAME,
+insert_table_plant_request = """
+INSERT INTO PLANT (
+    COMMON,
+    BOTANICAL,
+    ZONE,
+    LIGHT,
     PRICE,
-    DESCRIPTION,
-    CALORIES
+    AVAILABILITY
   )
 values
-  (?,?,?,?)
+  (?,?,?,?,?,?)
 """
 
 
-def create_table_food():
+def create_table_plant():
     try:
         with con:
-            con.execute(create_table_food_request)
+            con.execute(create_table_plant_request)
     except sqlite3.Error as error:
         print("Ошибка при работе с SQLite", error)
 
 
-def insert_data_food(data):
+def insert_data_plant(data):
     try:
         with con:
-            con.executemany(insert_table_food_request, data)
+            con.executemany(insert_table_plant_request, data)
     except sqlite3.Error as error:
         print("Ошибка при работе с SQLite", error)
 
@@ -58,7 +62,7 @@ def drop_table(table_name):
 def select_database_test():
     try:
         with con:
-            data = con.execute("SELECT * FROM FOOD")
+            data = con.execute("SELECT * FROM PLANT")
             for row in data:
                 print(row)
     except sqlite3.Error as error:
