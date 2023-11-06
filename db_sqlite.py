@@ -58,7 +58,7 @@ def drop_table(table_name):
 def select_database_test():
     try:
         with con:
-            data = con.execute("SELECT * FROM USER WHERE age <= 25")
+            data = con.execute("SELECT * FROM FOOD")
             for row in data:
                 print(row)
     except sqlite3.Error as error:

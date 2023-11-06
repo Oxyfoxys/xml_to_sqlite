@@ -10,4 +10,6 @@ class Test(TestCase):
                           'simple_xml' + app.get_date_and_time() + '.xml')
 
     def test_parse_xml_food(self):
-        xml_parser.get_xml_food('https://www.w3schools.com/xml/simple.xml')
+        data = xml_parser.get_xml_food('https://www.w3schools.com/xml/simple.xml')
+        for i in data:
+            print(i)
