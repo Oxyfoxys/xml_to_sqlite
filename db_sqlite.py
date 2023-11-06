@@ -4,22 +4,22 @@ con = sqlite3.connect(r'resources/food.db')
 
 create_table_food_request = """
 CREATE TABLE FOOD (
-    NAME TEXT COMMENT 'Цена на товар',
-    *** TEXT COMMENT '',
-    *** TEXT COMMENT '',
-    *** TEXT COMMENT ''
+    NAME TEXT COMMENT 'Наименование товара',
+    PRICE TEXT COMMENT 'Цена на товар',
+    DESCRIPTION TEXT COMMENT 'Описание товара',
+    CALORIES TEXT COMMENT 'Колорийность товара'
   )
 """
 
 insert_table_food_request = """
 INSERT INTO FOOD (
     NAME,
-    PRODUCT_GROUP,
-    FULL_NAME,
-    ***
+    PRICE,
+    DESCRIPTION,
+    CALORIES
   )
 values
-  (?,?,?)
+  (?,?,?,?)
 """
 
 
