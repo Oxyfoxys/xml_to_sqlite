@@ -1,6 +1,6 @@
 import sqlite3
 
-con = sqlite3.connect(r'resources/plant.db')
+con = sqlite3.connect(r'resources/cd.db')
 
 create_table_cd_request = """
 CREATE TABLE CD (
@@ -9,7 +9,7 @@ CREATE TABLE CD (
     COUNTRY TEXT COMMENT 'Страна',
     COMPANY TEXT COMMENT 'Компания',
     PRICE TEXT COMMENT 'Цена на товар',
-    YEAR TEXT COMMENT 'Год выпуска',
+    YEAR TEXT COMMENT 'Год выпуска'
   )
 """
 
