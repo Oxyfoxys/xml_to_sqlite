@@ -2,43 +2,43 @@ import sqlite3
 
 con = sqlite3.connect(r'resources/plant.db')
 
-create_table_plant_request = """
-CREATE TABLE PLANT (
-    COMMON TEXT COMMENT 'Группа товара',
-    BOTANICAL TEXT COMMENT 'Название на товар',
-    ZONE TEXT COMMENT 'Расположение  товара',
-    LIGHT TEXT COMMENT 'Свет товара',
+create_table_cd_request = """
+CREATE TABLE CD (
+    TITLE TEXT COMMENT 'Название товара',
+    ARTIST TEXT COMMENT 'Имя артиста',
+    COUNTRY TEXT COMMENT 'Страна',
+    COMPANY TEXT COMMENT 'Компания',
     PRICE TEXT COMMENT 'Цена на товар',
-    AVAILABILITY TEXT COMMENT 'Артикул товара'
+    YEAR TEXT COMMENT 'Год выпуска',
   )
 """
 
-insert_table_plant_request = """
-INSERT INTO PLANT (
-    COMMON,
-    BOTANICAL,
-    ZONE,
-    LIGHT,
+insert_table_cd_request = """
+INSERT INTO CD (
+    TITLE,
+    ARTIST,
+    COUNTRY,
+    COMPANY,
     PRICE,
-    AVAILABILITY
+    YEAR
   )
 values
   (?,?,?,?,?,?)
 """
 
 
-def create_table_plant():
+def create_table_cd():
     try:
         with con:
-            con.execute(create_table_plant_request)
+            con.execute(create_table_cd_request)
     except sqlite3.Error as error:
         print("Ошибка при работе с SQLite", error)
 
 
-def insert_data_plant(data):
+def insert_data_cd(data):
     try:
         with con:
-            con.executemany(insert_table_plant_request, data)
+            con.executemany(insert_table_cd_request, data)
     except sqlite3.Error as error:
         print("Ошибка при работе с SQLite", error)
 
