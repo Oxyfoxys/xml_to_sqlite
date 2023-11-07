@@ -9,7 +9,7 @@ CREATE TABLE PLANT (
     ZONE TEXT COMMENT 'Расположение  товара',
     LIGHT TEXT COMMENT 'Свет товара',
     PRICE TEXT COMMENT 'Цена на товар',
-    AVAILABILITY TEXT COMMENT 'Артикул товара',
+    AVAILABILITY TEXT COMMENT 'Артикул товара'
   )
 """
 
