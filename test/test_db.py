@@ -5,15 +5,15 @@ import xml_parser
 
 
 class Test(TestCase):
-    def test_create_table_plant(self):
-        db_sqlite.create_table_plant()
+    def test_create_table_cd(self):
+        db_sqlite.create_table_cd()
 
-    def test_insert_data_plant(self):
-        data = xml_parser.get_xml_plant('https://www.w3schools.com/xml/plant_catalog.xml')
-        db_sqlite.insert_data_plant(data)
+    def test_insert_data_cd(self):
+        data = xml_parser.get_xml_cd('https://www.w3schools.com/xml/cd_catalog.xml')
+        db_sqlite.insert_data_cd(data)
 
-    def test_select_data_plant(self):
+    def test_select_data_cd(self):
         db_sqlite.select_database_test()
 
-    def test_clear_data_plant(self):
-        db_sqlite.clear_table('plant')
+    def test_clear_data_cd(self):
+        db_sqlite.clear_table('cd')
